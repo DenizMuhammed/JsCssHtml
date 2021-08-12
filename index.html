@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- HTML: Hyper Text Markup Language // Hiper Metin İşaretleme Dili, Hiper metin, ziyaretçilerin anında erişe bildiği metinleri işaretleme
+ anlamındadır. Bir Cern fizikçisi olan Tim Berners-Lee tarafından icat edilmiştir.  -->
+
+ <!-- HTML etiketlerden oluşur. Şu an yaklaşık 140 civarı etiket vardır. HTML de etiketlerle yapılandırılan her şey bir elementtir.
+Elementlerle ilgili referansa; https://developer.mozilla.org/en-US/docs/Web/HTML/Element ulaşılabilir.  HTML'deki en son değişikliklere
+https://www.w3.org/ dan ulaşılabilir. Son zamanlardaki en büyük güncellemerden birisi 2014'de yapılan HTML5'dir. Bu güncellemeyle birlikte
+gelen etiketlerden bazıları: <article></article>, <header> ve footer> , bunlar içeriğin anlamını belirten anlamsal etiketlerdir. -->
+
+<!-- HTML etiketleri açılış etiketi ve kapanış etiketine sahiptir. Bazı etiketler sadece açılış etiketine sahiptir.-->
+    <html>
+        <head>
+            <title>
+                JS & HTMEL & CSS NOTLARIM
+            </title>
+        </head>
+<body>
+<!-- b etikedi bold yazmaya yarıyor. -->
+<b> MERHABA, JavaScript & HTML & CSS NOTLARIM.</b>
+
+<!-- h etiketi yazının boyutunu değiştiriyor. h1 en büyük h5 daha küçük -->
+<h1> <p style="color: rgb(30, 83, 83); float: left;">  renk,konum,pixel bilgileri girilebilir...</h1>
+
+    <!-- _blank: yeni pencerede açmayı sağlar. href: gidelecek adres. -->
+<br> <br> <br> <br> <br> <br>
+<a style="float: left;"  target="_blank" href="http://www.google.com">şu siteye git:  </a>
+<!-- <img src="ayairini.jpeg"> -->
+
+<a target="_blank" href="http://www.google.com"> <button> name </button> </a>
+
+ 
+<!-- liste oluşturmak için:-->
+<ul <p>KONULAR:</p>
+    <li> js</li>
+    <li> HTML</li>
+    <li> CSS</li>
+</ul>
+
+<!-- Aşağıdaki kod, butona tıklanınca yazının değişmesini sağlar.-->
+<button onclick="this.innerHTML ='butona tiklandi'"> buton_1 </button>
+
+<!-- Aşağıdaki kod, butona tıklandığında tiklama() fonk. çalıştırır-->
+<button onclick="tiklama()"> buton_2 </button>
+
+<!-- Aşağıdaki kod, buton_3 elementini ButonFonk fonksiyonuna gönderir.-->
+<button onclick="ButonFonk(this)"> buton_3 </button>
+
+<!-- Aşağıdaki kod, elemente bir ID atar. Bu ID ile elemente ulaşılabilir. -->
+<p id="0x0001"> Buradaki yazının rengini değiştirmek için buton 4 e bas</p>
+
+<!-- buton_4 e tıklanınca 0x0001 id li element id'si ile fonksiyon çağırılacak.-->
+<button onclick="IDileUlasma('0x0001')">  buton_4 </button>
+
+<!---->
+
+<button onmouseover="ButonOver('0x0002')" onmouseout="ButonOff('0x0002')" id="0x0002" style="font-family: 'Courier New', Courier, monospace;"> buton_5 </button>
+
+<!------------------------------------------------------------------------->
+<!------------------ JAVASCRİPT BÖLÜMÜ AŞAĞIDA BAŞLIYOR-------------------->
+<!------------------------------------------------------------------------->
+
+<script> // JS KODLARI YAZMA ALANI BAŞLANGICI
+
+//*************** TEMEL BİLGİLER:
+console.log("//*************** TEMEL BİLGİLER:");
+var x =45; // dinamik değişken tanımlama.
+console.log("Bu bir JS komutudur.") // html consola veri gönderme
+
+function fonksiyon(Veri) // fonksiyon tanımlama
+{
+Veri*=Veri;
+return Veri;
+}
+var y=2021;
+console.log(y + " Sayısının karesi = "+ (fonksiyon(y)));
+
+alert("BU BİR JS ALERTİDİR."); // Sayfa yüklenirken bir uyarı paneli görüntülenir.
+
+for(var j=1;j<40;j++) // for,if,mod,mantıksal operator örneği.
+{
+    if((j%19==0) && (j%2==0))
+    {
+    alert(j + " çift ve 19 un katıdir. ");
+    }
+}
+
+console.log("dizi elemanları listelendi:");
+var dizi= [1,2,"dünya",3.2,"kainat"]; // dizi tanımlama, ekleme,yazdırma örneği
+for(var j=0; j<20; j++)
+{
+    if(!(j<dizi.length))
+    {
+        dizi[j]="yeni indis eklendi";
+    }
+    console.log(j +"'inci "+ dizi[j]+"\n");
+   // push ve pop metodları ili diziye eleman eklenir ve atılabilir.
+}
+
+//*************** OBJE TANIMLAMA:
+console.log("//*************** OBJE TANIMLAMA:");
+var Nesne = {
+    isim: "leyla",
+    soyisim: "deniz",
+    yas:"14",
+    meslek: "js devoloaper",
+    diller: ["c","java","R"],
+    medenidurum : null,
+
+    adres: { // adres: obje içindeki bir obje değişkenidir. Yani obje içinde obje.
+
+        sokak: "cihangir",
+        mahalle: "cevrik",
+        No: 44
+
+    },
+
+    Fonk: function(x)  // fonksiyon tanımlama ve "this" keyword'u
+    {
+        this.yas=x;
+        console.log("fonksiyonda üretilen değer:"+ this.yas );
+
+    }
+};
+console.log("Nesne.yas= " + Nesne.yas);
+console.log("Nesne.adres.No= " + Nesne.adres.No);
+Nesne.Fonk(13);
+
+//*************** OBJE TANIMLAMA-2 (new keyword ile) : 
+console.log("//*************** OBJE TANIMLAMA-2 (new keyword ile) : ");
+var Nesne2 = new Object();
+
+Nesne2.okul="Duzce Univ";
+Nesne2.bolum="EEM";
+Nesne2.sinif=3;
+Nesne2.fizik=2;
+Nesne2.transkript = function() {
+this.fizik+=1;
+console.log("fizik puani bir artti: " + this.fizik);
+}
+Nesne2.transkript();
+
+//*************** OBJE TANIMLAMA-3 (contractor method ile):
+console.log("//*************** OBJE TANIMLAMA-3 (contractor method ile):");
+function Objem(isim_p,no_p,okul_p) //xxx_p : parametre anlaminda
+{
+ this.isim=isim_p;
+ this.no=no_p;
+ this.okul=okul_p;
+ this.yas=null;
+}
+
+var Nesne3 = new Objem("ali",195,"NimetPisak İO");
+console.log("kurucu metod ile nesne oluşturuldu.");
+console.log(Nesne3);
+Nesne3.yas=13;
+console.log("Nesne3 yeni yas: " + Nesne3.yas);
+var Nesne4=new Objem();
+console.log("default değerler atanmamış Nesne4:"+ Nesne4)
+
+
+//*************** EVENT'LAR:
+console.log("//*************** EVENT'LAR:");
+//Bilgi almak için: www.w3schools.com
+console.log("//Bilgi almak için: www.w3schools.com");
+//*************** BUTONA TIKLAMA:
+console.log("//*************** BUTONA TIKLAMA:");
+function tiklama() // satir 34'e BAK!, oradaki buton tıklanınca bu fonksiyon çalışacak.
+{
+alert("butona tıklandı");
+console.log("butona tıklandı");
+}
+
+//*************** BUTONU FONKSİYONA GEÇME:
+console.log("//*************** BUTONU FONKSİYONA GEÇME:");
+//*************** BUTONA TIKLAMA:
+console.log("//*************** BUTONA TIKLAMA:");
+function ButonFonk(element)
+{
+    element.innerHTML="Butona basıldı."
+    element.style.color ="red";
+    
+}
+
+//*************** ELEMENTLERE ID İLE ULAŞMA:
+console.log("//*************** ELEMENTLERE ID İLE ULAŞMA:");
+function IDileUlasma(ID) // ID bilgisi fonksiyona geçiliyor.
+{
+    var element = document.getElementById(ID); // id'si ID olan element alınıyor.
+    var renk= element.style.color;
+
+    if(renk=="black")
+    {
+        element.style.color="green";
+    }
+
+    else
+    {
+        element.style.color="black";
+    }
+
+    
+}
+
+//*************** MOUSE EVENTS ÖRNEĞİ:
+console.log("//*************** MOUSE EVENTS ÖRNEĞİ:");
+
+function ButonOver (ID) // butonun üzerinde gelince tetiklenir.
+{
+    var element=document.getElementById(ID);
+    element.innerHTML="üzerindesin";
+}
+function ButonOff (ID) // butonun üstünden ayrılınca tetiklenir.
+{
+    var element=document.getElementById(ID);
+    element.innerHTML="buton_5";
+}
+
+//*************** FORM DOĞRULAMA (input kontrol):
+
+console.log("//*************** FORM DOĞRULAMA (input kontrol):");
+</script>
+</body>
+    </html>
